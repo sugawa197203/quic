@@ -201,7 +201,7 @@ QuicRxBufferTestCase::TestSocketExtract ()
   NS_TEST_ASSERT_MSG_EQ(rxBuf.Available (), 3600,
                         "Availability differs from expected");
   NS_TEST_ASSERT_MSG_EQ(rxBuf.Size (), 0, "Buffer size differs from expected");
-  NS_TEST_ASSERT_MSG_NE(!out, true, "Packet size differs from expected");
+  NS_TEST_ASSERT_MSG_EQ(!out, true, "Packet size differs from expected");
 }
 
 void
@@ -356,7 +356,7 @@ QuicRxBufferTestCase::TestStreamExtract ()
 
   // test empty buffer
   outPkt = rxBuf.Extract(1200);
-  NS_TEST_ASSERT_MSG_NE(!outPkt, true, "Failed to extract packets");
+  NS_TEST_ASSERT_MSG_EQ(!outPkt, true, "Failed to extract packets");
   NS_TEST_ASSERT_MSG_EQ(rxBuf.Available (), 18000, "Wrong available data size");
   NS_TEST_ASSERT_MSG_EQ(rxBuf.Size (), 0, "Wrong buffer size");
 }
