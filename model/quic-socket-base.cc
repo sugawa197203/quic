@@ -1302,7 +1302,8 @@ QuicSocketBase::SendDataPacket (SequenceNumber32 packetNumber,
   if (sz < maxSize and m_txBuffer->AppSize () == 0 and m_tcb->m_bytesInFlight.Get () < m_tcb->m_cWnd)
     {
       NS_LOG_LOGIC ("Connection is Application-Limited. sz = " << sz << " < maxSize = " << maxSize);
-      m_tcb->m_appLimitedUntil = m_tcb->m_delivered + m_tcb->m_bytesInFlight.Get () ? : 1U;
+      uint64_t appLimitedUntil = m_tcb->m_delivered + m_tcb->m_bytesInFlight.Get ();
+      m_tcb->m_appLimitedUntil = appLimitedUntil ? appLimitedUntil : 1U;
     }
 
   // perform pacing
