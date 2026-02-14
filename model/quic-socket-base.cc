@@ -79,12 +79,6 @@ NS_OBJECT_ENSURE_REGISTERED (QuicSocketState);
 const uint16_t QuicSocketBase::MIN_INITIAL_PACKET_SIZE = 1200;
 
 TypeId
-QuicSocketBase::GetInstanceTypeId () const
-{
-  return QuicSocketBase::GetTypeId ();
-}
-
-TypeId
 QuicSocketBase::GetTypeId (void)
 {
   static TypeId tid = TypeId ("ns3::QuicSocketBase")
