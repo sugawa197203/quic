@@ -72,13 +72,6 @@ QuicStreamBase::GetTypeId (void)
   return tid;
 }
 
-TypeId
-QuicStreamBase::GetInstanceTypeId () const
-{
-  return QuicStreamBase::GetTypeId ();
-}
-
-
 QuicStreamBase::QuicStreamBase (void)
   : QuicStream (),
   m_streamType (NONE),
