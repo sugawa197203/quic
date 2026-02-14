@@ -180,12 +180,6 @@ public:
   static TypeId GetTypeId (void);
 
   /**
-   * \brief Get the instance TypeId
-   * \return the instance TypeId
-   */
-  virtual TypeId GetInstanceTypeId () const;
-
-  /**
    * \brief Build an object. InitializeScheduling() must be called after construction to instantiate the frame scheduler, or the construction will fail
    *
    */

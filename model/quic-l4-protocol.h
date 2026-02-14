@@ -55,7 +55,6 @@ public:
   ~QuicUdpBinding ();
 
   static TypeId GetTypeId (void);
-  TypeId GetInstanceTypeId (void) const;
 
   Ptr<Socket> m_budpSocket;          //!< The UDP socket this binding is associated with
   Ptr<Socket> m_budpSocket6;         //!< The IPv6 UDP this binding is associated with

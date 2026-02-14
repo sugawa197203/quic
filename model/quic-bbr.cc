@@ -364,7 +364,8 @@ QuicBbr::HandleProbeRTT (Ptr<QuicSocketState> tcb)
 {
   NS_LOG_FUNCTION (this << tcb);
 
-  tcb->m_appLimitedUntil = (tcb->m_delivered + tcb->m_bytesInFlight.Get ()) ?: 1;
+  uint64_t appLimitedUntil = tcb->m_delivered + tcb->m_bytesInFlight.Get ();
+  tcb->m_appLimitedUntil = appLimitedUntil ? appLimitedUntil : 1;
 
   if (m_probeRttDoneStamp == Seconds (0) && tcb->m_bytesInFlight <= m_minPipeCwnd)
     {

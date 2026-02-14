@@ -98,14 +98,6 @@ QuicUdpBinding::GetTypeId (void)
   return tid;
 }
 
-TypeId
-QuicUdpBinding::GetInstanceTypeId (void) const
-{
-  return GetTypeId ();
-}
-
-
-
 #undef NS_LOG_APPEND_CONTEXT
 #define NS_LOG_APPEND_CONTEXT                                   \
   if (m_node) { std::clog << " [node " << m_node->GetId () << "] "; }
@@ -703,7 +695,7 @@ QuicL4Protocol::CreateSocket (TypeId congestionTypeId)
         }
     }
   socket->SetConnectionId (connectionId);
-  Ptr<QuicUdpBinding> udpBinding = Create<QuicUdpBinding> ();
+  Ptr<QuicUdpBinding> udpBinding = CreateObject<QuicUdpBinding> ();
   udpBinding->m_budpSocket = nullptr;
   udpBinding->m_budpSocket6 = nullptr;
   udpBinding->m_quicSocket = socket;
