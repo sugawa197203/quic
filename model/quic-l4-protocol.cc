@@ -695,7 +695,7 @@ QuicL4Protocol::CreateSocket (TypeId congestionTypeId)
         }
     }
   socket->SetConnectionId (connectionId);
-  Ptr<QuicUdpBinding> udpBinding = Create<QuicUdpBinding> ();
+  Ptr<QuicUdpBinding> udpBinding = CreateObject<QuicUdpBinding> ();
   udpBinding->m_budpSocket = nullptr;
   udpBinding->m_budpSocket6 = nullptr;
   udpBinding->m_quicSocket = socket;
