@@ -41,6 +41,12 @@ namespace ns3 {
 class QuicStreamTxItem : public Object
 {
 public:
+  /**
+   * \brief Get the type ID.
+   * \return the object TypeId
+   */
+  static TypeId GetTypeId (void);
+  
   QuicStreamTxItem ();
   QuicStreamTxItem (const QuicStreamTxItem &other);
   ~QuicStreamTxItem ();

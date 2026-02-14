@@ -36,6 +36,17 @@ namespace ns3 {
 
 NS_LOG_COMPONENT_DEFINE ("QuicStreamTxBuffer");
 
+TypeId
+QuicStreamTxItem::GetTypeId (void)
+{
+  static TypeId tid = TypeId ("ns3::QuicStreamTxItem")
+    .SetParent<Object> ()
+    .SetGroupName ("Internet")
+    .AddConstructor<QuicStreamTxItem> ();
+  return tid;
+}
+
+
 QuicStreamTxItem::QuicStreamTxItem ()
   : m_packetNumberSequence (0),
     m_packet (0),
