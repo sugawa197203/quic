@@ -62,7 +62,7 @@ git clone https://github.com/sugawa197203/quic.git ./contrib/quic
 ./test.py
 ```
 
-## It probably works in Python too
+## Disabling Python Bindings
 
 If you are not interested in using the Python bindings, use
 
