@@ -1,6 +1,8 @@
 QUIC implementation for ns-3
 ================================
 
+This repository was **forked** from the **[original](https://github.com/signetlabdei/quic)** from **[repo forked for 3.42](https://github.com/a-andre/quic)**, and **modified** to work with ns3.46.1.
+
 ## QUIC code base
 This repository contains in the code for a native IETF QUIC implementation in ns-3.
 
@@ -12,65 +14,56 @@ Please use this [issue tracker](https://github.com/signetlabdei/quic-ns-3/issues
 
 ### Prerequisites ###
 
-To run simulations using this module, you will need to install ns-3, clone
-this repository inside the `src` directory, copy the QUIC applications from the quic-applications folder, and patch the `wscript` file of the applications module.
-Required dependencies include git and a build environment.
+- Ubuntu 20.04
+- ns3.46.1
 
 #### Installing dependencies ####
 
-Please refer to [the ns-3 wiki](https://www.nsnam.org/wiki/Installation) for instructions on how to set up your system to install ns-3.
+- download and install ns-3.46.1
+
+```bash
+wget https://www.nsnam.org/releases/ns-3.46.1.tar.bz2
+tar -xf ns-3.46.1.tar.bz2
+rm ns-3.46.1.tar.bz2
+cd ns-3.46.1
+```
+
+- I think it works with the allinone version too.
+- ref by [ns3.46-docs](https://www.nsnam.org/docs/release/3.46/tutorial/html/quick-start.html)
+  - 3.46 docs, but the command is for 3.45
 
 #### Downloading #####
 
-First, clone the main ns-3 repository:
+- clone the quic module in the `contrib` directory
 
 ```bash
-git clone https://gitlab.com/nsnam/ns-3-dev ns-3-dev
-cd ns-3-dev/src
+git clone https://github.com/sugawa197203/quic.git ./contrib/quic
 ```
 
-Then, clone the quic module:
-
-```bash
-git clone https://github.com/signetlabdei/quic quic
-```
-
-Thirdly, copy the QUIC applications and helpers to the applications module
-
-```bash
-cp quic/quic-applications/model/* applications/model/
-cp quic/quic-applications/helper/* applications/helper/
-```
-
-Finally, edit the `CMakeLists.txt` file of the applications module and add
-
-```python
-        model/quic-echo-client.h
-        model/quic-echo-server.h
-        model/quic-client.h
-        model/quic-server.h
-        helper/quic-echo-helper.h
-        helper/quic-client-server-helper.h
-```
-to the `HEADER_FILES` list and
-
-```python
-        model/quic-echo-client.cc
-        model/quic-echo-server.cc
-        model/quic-client.cc
-        model/quic-server.cc
-        helper/quic-echo-helper.cc
-        helper/quic-client-server-helper.cc
-```
-to the `SOURCE_FILES` list.
-### Compilation ###
-
-Configure and build ns-3 from the `ns-3-dev` folder:
+## Configure
 
 ```bash
 ./ns3 configure --enable-tests --enable-examples
+```
+
+- Make sure quic is listed under "Modules configured to be built:".
+  - If it's not, something's wrong.
+
+## Build
+
+```bash
 ./ns3 build
 ```
+
+## Test
+
+- Testing is recommended.
+
+```bash
+./test.py
+```
+
+## It probably works in Python too
 
 If you are not interested in using the Python bindings, use
 
