@@ -30,7 +30,6 @@ cd ns-3.46.1
 
 - I think it works with the allinone version too.
 - Reference: [ns-3.46 documentation](https://www.nsnam.org/docs/release/3.46/tutorial/html/quick-start.html)
-  - 3.46 docs, but the command is for 3.45
 
 #### Downloading #####
 
