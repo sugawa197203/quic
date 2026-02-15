@@ -19,7 +19,7 @@ Please use this [issue tracker](https://github.com/signetlabdei/quic-ns-3/issues
 
 #### Installing dependencies ####
 
-- download and install ns-3.46.1
+- Download and install ns-3.46.1
 
 ```bash
 wget https://www.nsnam.org/releases/ns-3.46.1.tar.bz2
