@@ -39,7 +39,7 @@ cd ns-3.46.1
 git clone https://github.com/sugawa197203/quic.git ./contrib/quic
 ```
 
-## Configure
+## Configuration
 
 ```bash
 ./ns3 configure --enable-tests --enable-examples
