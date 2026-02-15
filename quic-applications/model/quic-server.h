@@ -27,7 +27,7 @@
 #include "ns3/event-id.h"
 #include "ns3/ptr.h"
 #include "ns3/address.h"
-#include "packet-loss-counter.h"
+#include "ns3/packet-loss-counter.h"
 #include <iostream>
 #include <fstream>
 
