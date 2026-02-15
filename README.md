@@ -33,7 +33,7 @@ cd ns-3.46.1
 
 #### Downloading #####
 
-- clone the quic module in the `contrib` directory
+- Clone the quic module in the `contrib` directory
 
 ```bash
 git clone https://github.com/sugawa197203/quic.git ./contrib/quic
