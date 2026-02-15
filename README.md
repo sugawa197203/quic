@@ -54,7 +54,7 @@ git clone https://github.com/sugawa197203/quic.git ./contrib/quic
 ./ns3 build
 ```
 
-## Test
+## Testing
 
 - Testing is recommended.
 
