@@ -6,13 +6,13 @@ set(base_examples
     quic-variants-comparison
 )
 
-foreach(
-  example
-  ${base_examples}
-)
+foreach(example IN LISTS base_examples)
   build_lib_example(
     NAME ${example}
     SOURCE_FILES ${example}.cc
+    LIBRARIES_TO_LINK
+      ${libcore}
+      ${libquic}
     LIBRARIES_TO_LINK
       ${libcore}
       ${libquic}
